@@ -1,6 +1,6 @@
 FROM python:3.6.4-alpine3.6
 
-ENV FLASK_APP=minitwit
+ENV FLASK_APP=minitwit:app
 
 COPY . /app
 
@@ -9,9 +9,6 @@ WORKDIR /app
 RUN pip install --editable .
 
 RUN flask initdb
-
-# Unit tests
-# python setup.py test
 
 EXPOSE 5000
 

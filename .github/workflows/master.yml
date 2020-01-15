@@ -16,9 +16,4 @@ jobs:
         docker login docker.pkg.github.com --username edbighead --password ${{ secrets.GITHUB_TOKEN }}
         docker build . --file Dockerfile --tag docker.pkg.github.com/edbighead/python-flask-sample-app/app:latest
         docker push docker.pkg.github.com/edbighead/python-flask-sample-app/app:latest
-    - uses: yanzay/notify-telegram@v0.1.0
-      if: always()
-      with:
-        chat: 330079406
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        status: ${{ job.status }}
+
